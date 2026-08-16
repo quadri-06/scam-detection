@@ -1,0 +1,72 @@
+:root {
+  /* --- Color tokens ------------------------------------------------ */
+  --bg: #0a0e14;
+  --panel: #10151d;
+  --panel-raised: #141b25;
+  --border: #1e2733;
+  --text: #e7edf3;
+  --text-dim: #8592a3;
+  --text-faint: #566274;
+
+  --cyan: #22d3ee;      /* brand / scan accent */
+  --cyan-dim: #22d3ee33;
+  --green: #34d399;     /* safe */
+  --green-dim: #34d39922;
+  --amber: #fbbf24;     /* suspicious */
+  --amber-dim: #fbbf2422;
+  --red: #f87171;       /* dangerous */
+  --red-dim: #f8717122;
+
+  /* --- Type ---------------------------------------------------------- */
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  background-image:
+    radial-gradient(circle at 15% 0%, #14202b 0%, transparent 45%),
+    radial-gradient(circle at 85% 20%, #10202480 0%, transparent 40%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--cyan-dim);
+  color: var(--text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
